@@ -18,9 +18,9 @@
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
   <link rel="icon" type="image/png" href="{% static 'images/icon/student.png' %}">
-  <style>
-/* NAVBAR */
-#content .nave {
+  
+
+{% comment %} #content .nave {
 	height: 56px;
 	background: var(--light);
 	padding: 0 24px;
@@ -140,16 +140,17 @@
 }
 #content .nave #switch-mode:checked + .switch-mode::before {
 	left: calc(100% - (25px - 4px) - 2px);
-}
-/* NAVBAR */
+} {% endcomment %}
 
 
 
-  </style>
+
+ 
   
-  {% block css %}
-    
-  {% endblock css %}
+  
+{% block css %}
+
+{% endblock css %}
 </head>
 
 <body>

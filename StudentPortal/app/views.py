@@ -95,3 +95,10 @@ def register(request):
 
 def accueil(request):
     return render(request, 'app/accueil.html')
+
+# def  RegisterForm(request):
+#     form =  RegisterForm()
+#     context = {
+#         'form': form
+#     }
+#     return render(request, 'app/register.html', context)
