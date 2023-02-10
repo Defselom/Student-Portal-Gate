@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render,HttpResponse
 from . forms import *
 from youtubesearchpython import VideosSearch 
 
@@ -6,6 +6,7 @@ from youtubesearchpython import VideosSearch
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -73,25 +74,51 @@ def register(request):
     return render(request, 'app/register.html', context)
     # return render(request, 'app/register.html', {'form': form})
     
+    
+  # Ancienne Methode   
 
-def register(request):
-    if request.method == 'POST':
-        form = UserRegistrationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            messages.success(request, f"Account created for {username}!!")
+# def register(request):
+#     if request.method == 'POST':
+#         form = UserRegistrationForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             username = form.cleaned_data.get('username')
+#             messages.success(request, f"Account created for {username}!!")
             
-            return redirect('home')
-    else:
-        form  = UserRegistrationForm()
-    context = {
-            'form': form
-    }
-    return render(request, 'app/register.html', context)
+#             return redirect('home')
+#     else:
+#         form  = UserRegistrationForm()
+#     context = {
+#             'form': form
+#     }
+#     return render(request, 'app/register.html', context)
 
 # def profile(request):
 #     return render(request, 'app/profile.html')
+
+
+def registerPage(request):
+    if request.method == 'POST':
+        uname = request.POST.get('username')
+        email = request.POST.get('email')
+        pass1 = request.POST.get('password')
+        pass2 = request.POST.get('password2')
+       
+        if pass1!=pass2:
+            #faire une page web dedier a ca. et utiliser render
+            return HttpResponse("Your password and confirm are not the same ")
+        else : 
+             my_user = User.objects.create_user(uname,email,pass1)
+             my_user.save()
+             return redirect('accueil')
+        
+    # for debugg return HttpResponse("User Created Succefull")
+    #     print(uname,email,pass1,pass2)
+        
+        
+    return render(request, 'app/register.html')
+        
+
 
 def accueil(request):
     return render(request, 'app/accueil.html')
@@ -102,3 +129,16 @@ def accueil(request):
 #         'form': form
 #     }
 #     return render(request, 'app/register.html', context)
+
+def loginPage(request):
+    if request.method == 'POST':
+        uname = request.POST.get('username')
+        pass1 = request.POST.get('password')
+        user = authenticate(username=uname, password=pass1)
+        if user is not None:
+            login(request, user)
+            return redirect('accueil')
+        else:
+            #faire une page pour ca aussi
+            return HttpResponse("User not found")
+    return render(request, 'app/login.html')
