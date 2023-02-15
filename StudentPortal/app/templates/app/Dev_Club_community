@@ -1,5 +1,0 @@
-{% extends 'app/base.html' %} 
-{% load static %} 
-{% block title%}
-Dev_Club_community
-{% endblock title %}

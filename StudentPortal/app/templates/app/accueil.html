@@ -12,6 +12,8 @@ Acueil
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        margin-bottom:0px;
+        padding-bottom:0px;
     }
 
     {% comment %} .container {
@@ -22,13 +24,14 @@ Acueil
         width: 400px;
         background-color: yellow;
     } {% endcomment %}
-    .container {
+    .containeeer {
         text-align: center;
         width: 400px;
-        background-color: yellow;
-        transform: translate(103%, -128%);
+        background-color: #0B5DD6;
+        transform: translate(221%, -129%);
         padding-bottom: 100px;
         border-radius:10px;
+        color:white;
     }
     .title{
         font-size: 75px;
@@ -36,17 +39,69 @@ Acueil
     }
     .inscription{
         display:flex;
-        width: 80%;
-        margin: 0 auto;
+        width:100%;
+        {% comment %} width: 80%; {% endcomment %}
+        {% comment %} margin: 0 auto; {% endcomment %}
+        background-color : #2F2F57;
+        border:none;
+        outline:none;
+        space-between:0px;
+        font-size:large;
+        letter-space:5px;
 
     }
     .gauche{
-        background-color:violet;
-        margin-right:5px;
+      width:50%;
+        background-color:#2F2F57;
+        {% comment %} margin-right:5px; {% endcomment %}
+        margin-right:0px;
+        color:white;
+        margin-left:6%;
+        padding-top:20px;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        margin-right:4%;
+        word-spacing: 2.5px;
+    }
+
+    .gauche h1{
+      color:#CF71CF;
     }
     .droite{
+      background:blue;
         width:50%;
+        object-fit: cover;
+        padding:0;
+        margin:0;
+    
     }
+    .subbtn{
+      height:40px;
+      width:200px;
+      border:none;
+      box-shadow: 0 10px 20px RGBA(0,0,0,0.4) ;
+      border-radius:10px;
+      background-color:#CF71CF;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: large;
+    }
+    .courses{
+      position:absolute;
+      width:100%; 
+      background-color:white;
+      top:1180px;
+    }
+    .coursestext{
+      width:79%;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size:x-large;
+    }
+    .coursestext h1{
+      font-size: 80px;
+      color:#0950B9;
+    }
+    
 </style>
 {% endblock css %}
 
@@ -57,25 +112,31 @@ Acueil
 
 <div class="parallax"></div>
 
-<div class="container">
+<div class="containeeer">
   <h1 class="title">  <stong>Why are we the best?</strong></h1>
     {% comment %} <p>We are considered the top university because of our prestigious academic reputation, the quality of our faculty and research, and our commitment to excellence and innovation in education and health care. In addition, we offer a wide range of cutting-edge academic programs and research centers..</p> {% endcomment %}
     <p>Welcome for all of You</p>
-    <input type="button" value="Discover our university" class="btn btn-primary">
-</div>
-<center>
-<section>
+    {% comment %} <input type="button" value="Discover our university" class="btn btn-primary"> {% endcomment %}
+    <a href="{% url 'about' %}"><input type="button" value="Discover our university"  class="subbtn"></a></input>
+
+  </div>
+  <center>
+<section class="courses">
+  <div class="coursestext">
     <h1>AVAILABLE COURSES</h1>
 
-    <p>As one of the most prestigious universities in the world, Harvest courses offer a unique opportunity for individuals seeking to enhance their careers. With high quality teaching programs and state-of-the-art research centers, taking our courses can help students gain the knowledge and skills needed to stand out in the professional world.<br>for more info, click on the button below</p>
-    <input type="button" value="Discover our Courses" class="btn btn-primary">
+    <p >As one of the most prestigious universities in the world, Princeton  courses offer a unique opportunity for individuals seeking to enhance their careers. With high quality teaching programs and state-of-the-art research centers, taking our courses can help students gain the knowledge and skills needed to stand out in the professional world.<br><h5><i>for more info, click on the button below<i></h5></p>
+  </div>
+    <a href="{% url 'courses' %}">   <input type="button" value="Discover our Courses" class="btn btn-primary"> </a>
 </section>
+</center>
 <br><br>
 <section class="inscription">
 <div class="gauche">
-    <h1>Inscription Ouverte</h1>
-    <p>{% lorem 2 b random %}</p>
-    <input type="button" value="Suscribe now" class="btn btn-primary">
+    <h1>Open registration</h1>
+    <p>
+      Unlock your potential and take your first step towards a brighter future by signing up for our university program today! Our program offers a world-class education, expert faculty, and cutting-edge facilities to provide you with the skills and knowledge you need to succeed in your chosen career. By joining our community of students, you'll also gain access to a vast network of alumni and industry connections that will help you build a successful career. Sign up now and discover the endless opportunities waiting for you!    </p>
+      <a href="{% url 'login' %}"><input type="button" value="Suscribe now" class="btn btn-primary"></a>
 </div>
 <div class="droite">
     <img src="{% static 'images/accueil/ac1.jpg' %}">
@@ -83,7 +144,76 @@ Acueil
 
 
 </section>    
-</center>
+<!-- Features Section -->
+<section class="py-5 bg-light">
+    <div class="container py-5">
+      <div class="row align-items-center gx-lg-0">
+        <div class="col-lg-5">
+          <div class="bg-primary pe-lg-3"><img class="img-fluid w-100" src="{% static 'images/accueil2/ac.jpg' %}" alt=""></div>
+        </div>
+        <div class="col-lg-7">
+          <div class="p-4 p-md-5 shadow bg-white">
+            <p class="h6 mb-1 text-uppercase text-primary mb-3">Why choose us</p>
+            <h2 class="mb-5">We Provide Experts To boost our Education</h2>
+            <div class="row">
+              <div class="col-lg-9">
+                <ol class="list-numbers mb-0">
+                  <li class="mb-4">
+                    <h5>Unlock Your Potential </h5>
+                    <p class="text-sm text-muted"> Join the Elite Community at Princeton University </p>
+                  </li>
+                  <li class="mb-4">
+                    <h5>Discover Your Future</h5>
+                    <p class="text-sm text-muted"> Transform Your Education at Princeton University. </p>
+                  </li>
+                  <li class="mb-4">
+                    <h5>Empower Your Mind</h5>
+                    <p class="text-sm text-muted">Learn, Grow and Succeed at  Princeton University. </p>
+                  </li>
+                  <li>
+                    <h5>Experience Excellence</h5>
+                    <p class="text-sm text-muted">Build Your Career at  Princeton University. </p>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<div class="bg-primary py-5 text-white">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-3 col-md-6">
+        <div class="d-flex align-items-center">
+          <h6 class="h1 mb-0">+1M</h6>
+          <p class="ms-3 flex-grow-1 text-uppercase mb-0">Projects completed </p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="d-flex align-items-center">
+          <h6 class="h1 mb-0">+200K</h6>
+          <p class="ms-3 flex-grow-1 text-uppercase mb-0">Satisfied students </p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="d-flex align-items-center">
+          <h6 class="h1 mb-0">+50K</h6>
+          <p class="ms-3 flex-grow-1 text-uppercase mb-0">Awards recieved </p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="d-flex align-items-center">
+          <h6 class="h1 mb-0">50</h6>
+          <p class="ms-3 flex-grow-1 text-uppercase mb-0">Years experience </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-white text-muted">
@@ -129,11 +259,10 @@ Acueil
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             <!-- Content -->
             <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-gem me-3 text-secondary"></i>University Name 
+              <i class="fas fa-gem me-3 text-secondary"></i> Princeton University
             </h6>
             <p>
-              Here you can use rows and columns to organize your footer content. Lorem ipsum
-              dolor sit amet, consectetur adipisicing elit.
+                "Knowledge for a better world: Inspiring creativity, fostering innovation, and cultivating leadership"
             </p>
           </div>
           <!-- Grid column -->
@@ -202,7 +331,7 @@ Acueil
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
       © 2023 Copyright:
-      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Defselom && ABODA</a>
+      <a class="text-reset fw-bold" href="#">Defselom && ABODA</a>
     </div>
     <!-- Copyright -->
   </footer>

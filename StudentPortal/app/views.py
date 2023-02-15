@@ -23,6 +23,7 @@ def cours(request):
 def hackathon(request):
     return render(request, 'app/hackathon.html')
 
+@login_required
 def youtube(request):
     if request.method == "POST":
         form = youtubeform(request.POST)
@@ -62,8 +63,8 @@ def youtube(request):
     return render(request, 'app/youtube.html',context)
 
 @login_required
-def Dev_Club_community(request):
-    return render(request, 'app/Dev_Club_community.html')
+def Dev(request):
+    return render(request, 'app/Dev.html')
 
 
 # def register(request):
@@ -90,7 +91,7 @@ def registerPage(request):
         else: 
             my_user = User.objects.create_user(uname,email,pass1)
             my_user.save()
-            return redirect('youtube')
+            return redirect('studentSpace')
     # return HttpResponse("User Created Succefull")
     # print(uname,email,pass1,pass2)
     return render(request, 'app/register.html')
@@ -119,7 +120,7 @@ def loginPage(request):
         user = authenticate(username=uname, password=pass1)
         if user is not None:
             login(request, user)
-            return redirect('accueil')
+            return redirect('studentSpace')
         else:
             #faire une page pour ca aussi
             return render(request, 'app/404page.html')
@@ -135,5 +136,23 @@ def newbase(request):
 def about(request):
     return render(request, 'app/about.html')
 
+## import contact model
+from .models import Contact
+## import reverse to use in httpresponse
+from django.urls import reverse
+
 def contact(request):
+    contact_url = reverse('contact')
+    if request.method == 'POST':
+        contact = Contact()
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        contact.name = name
+        contact.email = email
+        contact.subject = subject
+        contact.message = message
+        contact.save()
+        return HttpResponse('<h1>Your message has been sent<h1><br><a href="{}"> Click here to  Go back </a>'.format(contact_url))
     return render(request, 'app/contact.html')

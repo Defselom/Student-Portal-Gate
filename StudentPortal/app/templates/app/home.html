@@ -4,13 +4,15 @@
 Home
 {% endblock title %}
 
+
+
 {% block content %}
 <div style="display:block">
     <br><br>
     <center><h1 class="welcome"> <strong>Welcome {{username}}</strong></h1></center>
 <section id="slider" class="pt-5">
     <div class="container">
-      <h1 class="text-center"><b>Our Menu</b></h1>
+      <h3 class="text-center"><i>Here is our menu</i></h3>
         <div class="slider">
                   <div class="owl-carousel">
                     <a href="{% url 'hackathon' %}" class="malink">
@@ -40,7 +42,7 @@ Home
                           <p class="text-center p-4">Search Youtube and select your desired video to play it on youtube</p>
                       </div>
                     </a>
-                      <a href="{% url 'Dev_Club_community' %}"class="malink">
+                      <a href="{% url 'Dev' %}"class="malink">
                       <div class="slider-card">
                           <div class="d-flex justify-content-center align-items-center mb-4">
                             <img class="card-img-top" src="{% static 'images/developperCommunity.jpg' %}" alt="Notes image">
@@ -54,4 +56,9 @@ Home
     </div>
   </section>
 </div>
+
+
+
+
 {% endblock content %}
+
