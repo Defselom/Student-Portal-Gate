@@ -1,0 +1,131 @@
+{% extends 'app/newbase.html' %} 
+{% load static %} 
+{% block title%}
+Home
+{% endblock title %}
+{% block content %}
+
+<section class="container text-center">
+  <h1 class="welcome"> <strong>Welcome {{username}}</strong></h1>
+
+  <hr> <br>
+  <div class="row">
+    <div class="col-md-3">
+      <a  href="{% url 'hackathon' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/hackathon.jpg' %}" alt="hackathon image">
+          <div class="card-body">
+            <h5 class="card-title ">
+              Hackathon 
+            </h5>
+            A hackathon is a high-energy event where participants come together to develop and build new software and hardware projects in a limited amount of time, usually over the course of a day or a weekend
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-3">
+      <a  href="{% url 'cours' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/cours.jpg' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="card-title ">
+              Cours
+            </h5>
+            High-quality education programs - Our university offers relevant and top-notch education programs that prepare students for their careers.
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a  href="{% url 'youtube' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/youtube.jpg' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="card-title ">
+              Youtube
+            </h5>
+            Search Youtube and select your desired video to play it on youtube
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a  href="{% url 'Dev_Club_community' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/developperCommunity.jpg' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="card-title ">
+              Developper Community
+            </h5>
+            Continuous learning - The developer community values continuous learning and professional development, with frequent events, meetups, and workshops.
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <br><br><br>
+   {% comment %} <div class="row">
+    <div class="col-md-3 ">
+      <a href="#">
+        <div class="card mt-20">
+          <img class="card-img-top" src="{% static 'images/books.jpg' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="card-title ">
+              Books
+            </h5>
+            Browse books from a list of neatly organised book menu
+          </div>
+        </div>
+      </a>
+    </div>
+
+
+
+    <div class="col-md-3">
+      <a href="#">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/dictionary.jpg' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="card-title ">
+              Dictionary
+            </h5>
+            A vocabulary from a book is troubling you? No problem, enter the word, and the meaning will be displayed
+            almost instantaneously.
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="#">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/wiki.jpg' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="card-title ">
+              WikiPedia
+            </h5>
+            Homework and Assignments? Search wikipedia to get fast results
+          </div>
+        </div>
+      </a>
+    </div>
+
+
+    <div class="col-md-3">
+      <a href="#">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/conversion.jpg' %}" alt="Notes image">
+          <div class="card-body">
+            <h5 class="card-title ">
+              Conversion
+            </h5>
+            Check out the conversion table, that helps you to convert measurements to more familiar ones of your choice.
+          </div>
+        </div>
+      </a>
+    </div>
+  </div> 
+
+
+</section> {% endcomment %}
+{% endblock content %}

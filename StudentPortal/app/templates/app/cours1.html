@@ -1,0 +1,214 @@
+{% extends 'app/newbase.html' %} 
+{% load static %} 
+{% block title%}
+Courses
+{% endblock title %}
+
+
+
+
+{% block content %}
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/caroussel/caroussel3.jpg' %}" alt="caroussel-1" class="d-block w-100" >
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/caroussel/caroussel4.jpg' %}" alt="caroussel-2"  class="d-block w-100" >
+    </div>
+    <div class="carousel-item">
+        <img src="{% static 'images/caroussel/caroussel4.jpg' %}" alt="caroussel-2"  class="d-block w-100" >
+      </div>
+    
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+    {% comment %} <div class="bd-example">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="{% static 'images/caroussel/caroussel3.jpg' %}" alt="caroussel-1" >
+              <!-- <div class="carousel-caption d-none d-md-block">
+                <h3>First slide label</h3>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              </div> -->
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="{% static 'images/caroussel/caroussel4.jpg' %}" alt="caroussel-2" >
+              <!-- <div class="carousel-caption d-none d-md-block">
+                <h3>Second slide label</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div> -->
+            </div>
+            
+          
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <!-- <span class="sr-only">Previous</span> -->
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <!-- <span class="sr-only">Next</span> -->
+          </a>
+        </div> 
+      </div>{% endcomment %}
+      <br><br> <br><br> <br><br>
+
+
+     <center><h4 style="color: green;">GUARANTEED SUCCESS</h4>
+      <h1>Our Popular Courses</h1></center> 
+      <br><br> <br>
+ 
+
+
+
+
+
+<section class="container text-center">
+  <h3>Welcome</h3>
+
+  <hr> <br>
+  <div class="row">
+    <div class="col-md-3">
+        <a href="#">
+          <div class="card">
+            <img class="card-img-top" src="{% static 'images/icon/Blockchain.jpg' %}" alt="Blockchain.jpg image">
+            <div class="card-body">
+              <h5 class="card-title ">
+                Blockchain Technology
+              </h5>
+          
+              Blockchain is important as it provides a secure and transparent way of storing and sharing data and information. It has the potential to revolutionize various industries, including finance, supply chain management, and digital identity verification, by reducing the need for intermediaries and increasing trust.
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-3">
+        <a href="#">
+          <div class="card">
+            <img class="card-img-top" src="{% static 'images/icon/Full-StackWebDevelopment.jpg' %}" alt="Full-StackWebDevelopment  image">
+            <div class="card-body">
+              <h5 class="card-title ">
+                  Full-Stack Web Development
+              </h5>
+              Full-Stack Web Development is important as it provides the knowledge and skills to build and maintain websites and web applications from front-end to back-end. With the increasing demand for online presence and digital transformation, this knowledge is valuable for career advancement and job opportunities in the tech industry.
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+        <a href="#">
+          <div class="card">
+            <img class="card-img-top" src="{% static 'images/icon/InternetofThings.jpg' %}" alt=" Internet of Things  image">
+            <div class="card-body">
+              <h5 class="card-title ">
+                  Internet of Things (IoT)
+              </h5>
+              The Internet of Things (IoT) is crucial as it refers to the interconnectivity of physical devices, vehicles, and home appliances that are embedded with electronics, software, and sensors. This technology has the potential to revolutionize various industries, such as manufacturing, healthcare, and transportation, by improving efficiency, reducing costs, and creating new business models. Thus, having knowledge and understanding of IoT is valuable for career advancement and job opportunities.
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+        <a href="#">
+          <div class="card">
+            <img class="card-img-top" src="{% static 'images/icon/Cybersecurity.jpg' %}" alt="Cybersecurity image">
+            <div class="card-body">
+              <h5 class="card-title ">
+                Cybersecurity
+              </h5>
+              Cybersecurity is important as it involves protecting systems, networks, and data from cyber-attacks and unauthorized access. With the increasing dependence on technology and the growth of cyber-crimes, securing sensitive information and data is a top priority for individuals, organizations, and governments. Thus, having knowledge and expertise in Cybersecurity is essential for career advancement and job opportunities in the tech industry.
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <br><br><br>
+   <div class="row">
+    <div class="col-md-3">
+        <a href="#">
+          <div class="card">
+            <img class="card-img-top" src="{% static 'images/icon/ArtIntelli.jpg' %}" alt="Artificial Intelligence and Machine Learning  image">
+            <div class="card-body">
+              <h5 class="card-title ">
+                  Artificial Intelligence and Machine Learning
+              </h5>
+                Artificial Intelligence (AI) and Machine Learning (ML) are important as they are the future of technology. AI and ML are used in various industries, such as healthcare, finance, and manufacturing, to improve efficiency, reduce costs, and create new business models. Thus, having knowledge and understanding of AI and ML is valuable for career advancement and job opportunities.
+          </div>
+        </div>
+      </a>
+    </div>
+
+
+
+    <div class="col-md-3">
+        <a href="#">
+          <div class="card">
+            <img class="card-img-top" src="{% static 'images/icon/cloud.jpg' %}" alt="  Cloud Computing image">
+            <div class="card-body">
+              <h5 class="card-title ">
+                  Cloud Computing
+              </h5>
+                Cloud Computing is important as it refers to the delivery of computing services, such as servers, storage, databases, networking, software, analytics, and intelligence, over the internet. With the increasing demand for online presence and digital transformation, this knowledge is valuable for career advancement and job opportunities in the tech industry.
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="#">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/icon/devops.jpg' %}" alt="devops image">
+          <div class="card-body">
+            <h5 class="card-title ">
+                DevOps
+            </h5>
+            DevOps is important as it focuses on the collaboration and communication between development and operations teams in order to increase efficiency and effectiveness in software delivery. With the increasing demand for digital transformation and faster delivery of high-quality software, knowledge of DevOps practices and tools is valuable for career advancement and job opportunities in the tech industry.
+          </div>
+        </div>
+      </a>
+    </div>
+
+
+    <div class="col-md-3">
+      <a href="#">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/icon/mobile.jpg' %}" alt=" Mobile Application Development image">
+          <div class="card-body">
+            <h5 class="card-title ">
+                Mobile Application Development
+            </h5>
+            Mobile Application Development is important as it involves creating software for mobile devices, such as smartphones and tablets. With the increasing number of mobile device users and the need for mobile-friendly applications, this knowledge is valuable for career advancement and job opportunities in the tech industry. Understanding the process of creating and maintaining mobile applications provides the skills needed to meet the demands of a constantly evolving market.
+          </div>
+        </div>
+      </a>
+    </div>
+  </div> 
+
+
+
+</section>
+
+
+{% endblock content %}

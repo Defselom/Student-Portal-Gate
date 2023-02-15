@@ -66,57 +66,39 @@ def Dev_Club_community(request):
     return render(request, 'app/Dev_Club_community.html')
 
 
-def register(request):
-    form = UserRegistrationForm()
-    context = {
-        'form': form
-    }
-    return render(request, 'app/register.html', context)
-    # return render(request, 'app/register.html', {'form': form})
-    
-    
-  # Ancienne Methode   
-
 # def register(request):
-#     if request.method == 'POST':
-#         form = UserRegistrationForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             username = form.cleaned_data.get('username')
-#             messages.success(request, f"Account created for {username}!!")
-            
-#             return redirect('home')
-#     else:
-#         form  = UserRegistrationForm()
+#     form = UserRegistrationForm()
 #     context = {
-#             'form': form
+#         'form': form
 #     }
 #     return render(request, 'app/register.html', context)
-
-# def profile(request):
-#     return render(request, 'app/profile.html')
-
+    # return render(request, 'app/register.html', {'form': form})
+    
 
 def registerPage(request):
     if request.method == 'POST':
         uname = request.POST.get('username')
         email = request.POST.get('email')
-        pass1 = request.POST.get('password')
+        pass1 = request.POST.get('password1')
         pass2 = request.POST.get('password2')
        
         if pass1!=pass2:
-            #faire une page web dedier a ca. et utiliser render
-            return HttpResponse("Your password and confirm are not the same ")
-        else : 
-             my_user = User.objects.create_user(uname,email,pass1)
-             my_user.save()
-             return redirect('accueil')
-        
-    # for debugg return HttpResponse("User Created Succefull")
-    #     print(uname,email,pass1,pass2)
-        
-        
+             #faire une page web dedier a ca. et utiliser render
+            # return HttpResponse("Your password and confirm are not the same ")
+            return render(request, 'app/401page.html')
+
+        else: 
+            my_user = User.objects.create_user(uname,email,pass1)
+            my_user.save()
+            return redirect('youtube')
+    # return HttpResponse("User Created Succefull")
+    # print(uname,email,pass1,pass2)
     return render(request, 'app/register.html')
+        
+    
+        
+        
+    
         
 
 
@@ -140,5 +122,18 @@ def loginPage(request):
             return redirect('accueil')
         else:
             #faire une page pour ca aussi
-            return HttpResponse("User not found")
+            return render(request, 'app/404page.html')
     return render(request, 'app/login.html')
+
+
+def newbase(request):
+    return render(request, 'app/newbase.html')
+
+
+
+
+def about(request):
+    return render(request, 'app/about.html')
+
+def contact(request):
+    return render(request, 'app/contact.html')
