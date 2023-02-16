@@ -156,3 +156,8 @@ def contact(request):
         contact.save()
         return HttpResponse('<h1>Your message has been sent<h1><br><a href="{}"> Click here to  Go back </a>'.format(contact_url))
     return render(request, 'app/contact.html')
+
+
+
+def enter(request):
+    return render(request, 'app/enter.html')
